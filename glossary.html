@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>名詞解說 — GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .glossary-search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--kaiju-gray);
+    background: var(--kaiju-charcoal);
+    padding: 0.75rem 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .glossary-search:focus-within { border-color: var(--kaiju-red); }
+  .search-icon { font-family: var(--font-mono); font-size: 0.8rem; color: var(--kaiju-red); flex-shrink: 0; }
+  .glossary-search input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--kaiju-white);
+    letter-spacing: 0.1em;
+  }
+  .glossary-search input::placeholder { color: var(--kaiju-mid); }
+
+  .glossary-alpha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 2.5rem;
+  }
+  .alpha-btn {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--kaiju-light);
+    background: none;
+    border: 1px solid var(--kaiju-gray);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .alpha-btn:hover { color: var(--kaiju-white); border-color: var(--kaiju-red); }
+
+  .glossary-full {
+    display: grid;
+    gap: 0;
+  }
+  .glossary-row {
+    display: grid;
+    grid-template-columns: 200px 80px 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
+  }
+  .glossary-row:hover { background: rgba(192,57,43,0.04); }
+  .g-term {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--kaiju-gold);
+    padding: 1.1rem 1rem 1.1rem 0;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+  }
+  .g-cat {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--kaiju-mid);
+    padding: 1.1rem 1rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+  .g-def {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--kaiju-light);
+    padding: 1.1rem 0 1.1rem 1.25rem;
+  }
+  .g-def strong { color: var(--kaiju-pale); }
+
+  .cat-pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+  }
+  .cat-status { background: rgba(74,240,160,0.1); color: var(--kaiju-atomic); }
+  .cat-material { background: rgba(201,168,76,0.12); color: var(--kaiju-gold); }
+  .cat-brand { background: rgba(192,57,43,0.15); color: #e88; }
+  .cat-culture { background: rgba(136,136,136,0.15); color: var(--kaiju-light); }
+  .cat-display { background: rgba(100,150,255,0.12); color: #9af; }
+
+  .no-results { font-family: var(--font-mono); font-size: 0.8rem; color: var(--kaiju-mid); padding: 2rem 0; letter-spacing: 0.15em; display: none; }
+
+  @media (max-width: 640px) {
+    .glossary-row { grid-template-columns: 1fr; }
+    .g-term { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.4rem; }
+    .g-cat { border-right: none; padding: 0.2rem 0 0.4rem; }
+    .g-def { padding: 0.4rem 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link" href="brands.html">品牌介紹</a>
+    <a class="nav-link" href="figures.html">經典系列</a>
+    <a class="nav-link" href="scale.html">比例指南</a>
+    <a class="nav-link" href="collecting.html">收藏技巧</a>
+    <a class="nav-link active" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label fade-up">// 06 — GLOSSARY</p>
+  <h1 class="page-title fade-up-2">名詞解說</h1>
+  <p class="page-desc fade-up-3">收藏圈必懂的行話、術語與品牌縮寫。無論是二手交流時看到的條件描述，還是品牌名稱的全名，都能在這裡找到解答。</p>
+</div>
+
+<div class="main-content">
+
+  <div class="glossary-search">
+    <div class="search-icon">// SEARCH</div>
+    <input type="text" id="searchInput" placeholder="輸入關鍵字搜尋..." oninput="filterGlossary()">
+  </div>
+
+  <div class="glossary-full" id="glossaryList">
+
+    <div class="glossary-row">
+      <div class="g-term">ソフビ（Sofubi）</div>
+      <div class="g-cat"><span class="cat-pill cat-material">材質</span></div>
+      <div class="g-def">「軟式ビニール（Soft Vinyl）」的縮寫，即<strong>軟質PVC</strong>。日本傳統怪獸玩具的代表材質，手感有彈性，色彩可在製程中直接注入塑料。昭和時代的Sofubi老玩具是今日收藏市場的重要品項。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">MISB</div>
+      <div class="g-cat"><span class="cat-pill cat-status">品相</span></div>
+      <div class="g-def"><strong>Mint In Sealed Box</strong>，全新未開封且附有原廠封膜（塑膠包膜完整）。是二手市場最高品相的描述方式，代表玩具從未被碰觸，通常能以最高溢價成交。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">MIB</div>
+      <div class="g-cat"><span class="cat-pill cat-status">品相</span></div>
+      <div class="g-def"><strong>Mint In Box</strong>，帶原盒但已開封。玩具本體全新完好，盒子保存良好。略低於MISB，但仍比無盒品有明顯溢價。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">OOB / Loose</div>
+      <div class="g-cat"><span class="cat-pill cat-status">品相</span></div>
+      <div class="g-def"><strong>Out Of Box / Loose</strong>，無盒品。玩具本體存在但無原盒，通常是已展示過的玩具。品相描述另加評分（A/B/C級），A級接近全新，C級有明顯使用痕跡。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">昭和 / 平成 / 令和</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">日本天皇年號，對應哥吉拉的不同電影時代。<strong>昭和系列（1954–1975）</strong>：初代至vs太空哥吉拉以前；<strong>平成系列（1984–2004）</strong>：超級哥吉拉到最終戰；<strong>令和系列（2016–今）</strong>：Shin Godzilla以後。各時代造型差異明顯，是玩具分類的重要依據。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">魂WEB限定</div>
+      <div class="g-cat"><span class="cat-pill cat-brand">品牌</span></div>
+      <div class="g-def">萬代魂商店（<strong>Tamashii Nations</strong>）官方網站獨家銷售的限定商品，通常為特殊塗裝或特別版本。發售量極少，僅限日本及部分地區購買，二手溢價往往極高，是S.H.MonsterArts收藏圈的熱門話題。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">S.H.MonsterArts</div>
+      <div class="g-cat"><span class="cat-pill cat-brand">品牌</span></div>
+      <div class="g-def">萬代旗下<strong>Tamashii Nations</strong>的高端可動怪獸人形系列，縮寫為SHMA。以精密多關節可動結構與電影級細節塗裝著稱，是目前最主流的高品質可動哥吉拉選擇。售價約台幣3,000–8,000元。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Kaiju（怪獸）</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">日語「怪獸」的羅馬字寫法。在西方收藏圈廣泛用來指稱所有日本特攝怪獸類玩具與角色，包含哥吉拉、摩斯拉、基多拉、拉頓等東宝怪獸，也泛指整個怪獸玩具收藏文化。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Toho（東宝）</div>
+      <div class="g-cat"><span class="cat-pill cat-brand">品牌</span></div>
+      <div class="g-def">成立於1932年的日本大型電影公司，<strong>哥吉拉IP的唯一持有者</strong>。所有官方哥吉拉玩具均須向東宝取得授權，仿製品在多數國家屬侵權行為。東宝對哥吉拉造型授權有嚴格審查，確保市場上的官方產品品質。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Tamashii Nations</div>
+      <div class="g-cat"><span class="cat-pill cat-brand">品牌</span></div>
+      <div class="g-def">萬代（Bandai）旗下高端可動人形品牌部門，負責S.H.Figuarts、S.H.MonsterArts、Robot Spirits等系列。每年在東京舉辦<strong>魂祭展覽（Tamashii Nations Event）</strong>，展示即將發售的新品，是玩具界年度重要活動。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Atomic Breath（原子吐息）</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">哥吉拉的招牌必殺技，日文稱「<strong>放射熱線（ほうしゃねつせん）</strong>」。依電影版本呈現為藍色、紅色或螺旋狀等不同形態。許多高端玩具附有透明效果配件（Effect Parts）模擬此特效，是展示的一大亮點。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Shin Godzilla（新哥吉拉）</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">2016年由庵野秀明（新世紀福音戰士導演）執導的哥吉拉電影，以全新恐怖造型與多段進化形態震驚全球。其第四形態造型獨特且充滿衝擊感，相關玩具至今仍是市場上最熱門的哥吉拉系列之一。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">MonsterVerse</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">傳奇影業（Legendary Pictures）製作的哥吉拉相關電影宇宙，包含《哥吉拉》（2014）、《金剛：骷髏島》（2017）、《哥吉拉：怪獸之王》（2019）、《哥吉拉大戰金剛》（2021）等。NECA、Hiya Toys等品牌的哥吉拉玩具多以此系列造型為主。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Diorama（場景）</div>
+      <div class="g-cat"><span class="cat-pill cat-display">展示</span></div>
+      <div class="g-def">搭配玩具製作的微縮場景，通常包含城市建築、廢墟、海洋或自然地貌等元素，能大幅提升展示的故事感與整體視覺效果。從簡單的底座到精緻的手工製作場景都算在內，是進階玩家的必備技能。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Effect Parts（效果零件）</div>
+      <div class="g-cat"><span class="cat-pill cat-display">展示</span></div>
+      <div class="g-def">通常以透明PVC或ABS製成，用於模擬火焰、爆炸、水花、原子吐息等動態效果的配件。S.H.MonsterArts系列常見附贈，也有第三方品牌（如Magic Sculpture）單獨販售通用效果零件組。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Polystone（聚酯樹脂）</div>
+      <div class="g-cat"><span class="cat-pill cat-material">材質</span></div>
+      <div class="g-def">一種以石粉與樹脂混合製成的<strong>重量感雕像材質</strong>，常見於Prime 1 Studio、Sideshow等高端雕像品牌。質感接近石膏，表面可呈現非常精細的紋理，但不可動，且較PVC產品沉重許多，需注意展示台的承重能力。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Art Sofubi（藝術軟膠）</div>
+      <div class="g-cat"><span class="cat-pill cat-culture">文化</span></div>
+      <div class="g-def">以日本昭和時代軟膠工藝為靈感、由當代藝術家或獨立工作室製作的限量藝術品，通常手工著色，發行量極少（有時不到50件）。與一般玩具不同，更接近當代藝術收藏品，在紐約、東京等地的藝術圈也有市場。</div>
+    </div>
+
+    <div class="glossary-row">
+      <div class="g-term">Tamashii Stage（魂底座）</div>
+      <div class="g-cat"><span class="cat-pill cat-display">展示</span></div>
+      <div class="g-def">萬代Tamashii Nations推出的通用展示底座系統，可搭配關節臂讓玩具呈現飛行或特殊姿勢。S.H.MonsterArts的哥吉拉體型較大，通常需要使用加強版支撐臂，部分大型款甚至需要專用底座才能安全展示。</div>
+    </div>
+
+  </div>
+  <div class="no-results" id="noResults">// 找不到符合的詞條 — NO RESULTS FOUND</div>
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+
+<script>
+function filterGlossary() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('.glossary-row');
+  let count = 0;
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    const match = !q || text.includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) count++;
+  });
+  document.getElementById('noResults').style.display = (q && count === 0) ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品牌介紹 — GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .brand-detail {
+    background: var(--kaiju-charcoal);
+    border: 1px solid var(--kaiju-gray);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .brand-detail:hover { border-color: var(--kaiju-red); }
+  .brand-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--kaiju-gray);
+  }
+  .brand-num-lg { font-family: var(--font-title); font-size: 5rem; line-height: 1; color: var(--kaiju-gray); }
+  .brand-name-lg { font-family: var(--font-title); font-size: 2.5rem; letter-spacing: 0.05em; color: var(--kaiju-white); }
+  .brand-origin-lg { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--kaiju-red); margin-top: 0.3rem; }
+  .brand-tier {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+  .tier-entry   { color: var(--kaiju-atomic); border-color: rgba(74,240,160,0.4); }
+  .tier-mid     { color: var(--kaiju-gold);   border-color: rgba(201,168,76,0.4); }
+  .tier-premium { color: #e88;                border-color: rgba(192,57,43,0.4); }
+  .tier-ultra   { color: var(--kaiju-pale);   border-color: rgba(204,204,204,0.3); }
+  .tier-vintage { color: #8fa; border-color: rgba(136,255,170,0.3); }
+  .brand-body { padding: 2rem; display: grid; grid-template-columns: 1fr 260px; gap: 2.5rem; }
+  .brand-body-text { font-size: 0.9rem; line-height: 1.8; color: var(--kaiju-light); }
+  .brand-body-text p + p { margin-top: 0.8rem; }
+  .brand-specs { border-left: 1px solid var(--kaiju-gray); padding-left: 2rem; }
+  .spec-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 1rem; }
+  .spec-key { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--kaiju-mid); }
+  .spec-val { font-family: var(--font-mono); font-size: 0.72rem; color: var(--kaiju-pale); text-align: right; }
+  .brand-tags-lg { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  @media (max-width: 700px) {
+    .brand-body { grid-template-columns: 1fr; }
+    .brand-specs { border-left: none; border-top: 1px solid var(--kaiju-gray); padding-left: 0; padding-top: 1.5rem; }
+    .brand-header { grid-template-columns: auto 1fr; }
+    .brand-tier { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link active" href="brands.html">品牌介紹</a>
+    <a class="nav-link" href="figures.html">經典系列</a>
+    <a class="nav-link" href="scale.html">比例指南</a>
+    <a class="nav-link" href="collecting.html">收藏技巧</a>
+    <a class="nav-link" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label fade-up">// 02 — BRAND DIRECTORY</p>
+  <h1 class="page-title fade-up-2">主要品牌介紹</h1>
+  <p class="page-desc fade-up-3">全球六大哥吉拉授權玩具品牌深度解析。從入門級軟膠到頂級樹脂雕像，找到最符合你預算與品味的選擇。</p>
+</div>
+
+<div class="main-content">
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">01</div>
+      <div>
+        <div class="brand-name-lg">BANDAI</div>
+        <div class="brand-origin-lg">JAPAN ／ 1950– ／ 萬代株式會社</div>
+      </div>
+      <span class="brand-tier tier-entry">ENTRY → PREMIUM</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>哥吉拉玩具最核心的授權商。萬代旗下涵蓋從數百元入門軟膠到萬元以上高端可動人形的完整產品線，幾乎滿足所有層次的收藏需求。</p>
+        <p><strong style="color:var(--kaiju-white)">Movie Monster Series（映画怪獣シリーズ）</strong>是最長壽的系列，以親民價格提供各個年代哥吉拉的軟膠版本，是入門收藏的最佳起點，也是許多老玩家的童年記憶。</p>
+        <p><strong style="color:var(--kaiju-white)">S.H.MonsterArts</strong>是萬代旗下魂商店（Tamashii Nations）的旗艦系列，以精密多關節可動結構聞名，每款售價約3,000–8,000台幣，是目前最受推薦的中高端可動人形選擇。魂WEB限定版更是收藏界的搶手品。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">軟膠 Sofubi</span><span class="tag">S.H.MonsterArts</span><span class="tag">Movie Monster</span><span class="tag">大眾到高端</span><span class="tag">全球最廣授權</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">成立</span><span class="spec-val">1950年</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">日本</span></div>
+        <div class="spec-row"><span class="spec-key">主力系列</span><span class="spec-val">Movie Monster / S.H.MA</span></div>
+        <div class="spec-row"><span class="spec-key">入門價位</span><span class="spec-val">NT$ 200–600</span></div>
+        <div class="spec-row"><span class="spec-key">高端價位</span><span class="spec-val">NT$ 3,000–9,000</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">全台玩具店／網購</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">02</div>
+      <div>
+        <div class="brand-name-lg">X-PLUS</div>
+        <div class="brand-origin-lg">JAPAN ／ 2002– ／ 株式会社エクスプラス</div>
+      </div>
+      <span class="brand-tier tier-premium">PREMIUM</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>高端收藏品市場的標竿品牌。X-Plus以超精細軟膠大型像著稱，每款均有限量生產，塗裝質感遠超一般玩具水準，更接近藝術品的等級。</p>
+        <p>主力產品為<strong style="color:var(--kaiju-white)">30cm Series</strong>與<strong style="color:var(--kaiju-white)">Gigantic Series</strong>，前者約30公分、後者可達50公分以上，均採用高品質軟質PVC製成。表面塗裝講究立體感與陰影層次，能呈現電影中怪獸皮膚的細膩紋理。</p>
+        <p>X-Plus產品通常僅透過日本官網或指定代理商預購，錯過預購期後往往一品難求，二手市場溢價幅度極大，是「一定要先預購」的代表性品牌。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">高端精品</span><span class="tag">有限量</span><span class="tag">30cm Series</span><span class="tag">Gigantic Series</span><span class="tag">展示等級</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">成立</span><span class="spec-val">2002年</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">日本</span></div>
+        <div class="spec-row"><span class="spec-key">主力系列</span><span class="spec-val">30cm / Gigantic</span></div>
+        <div class="spec-row"><span class="spec-key">主要材質</span><span class="spec-val">高品質軟膠PVC</span></div>
+        <div class="spec-row"><span class="spec-key">平均價位</span><span class="spec-val">NT$ 6,000–18,000</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">官網預購／代拍</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">03</div>
+      <div>
+        <div class="brand-name-lg">NECA</div>
+        <div class="brand-origin-lg">USA ／ 1996– ／ National Entertainment Collectibles Association</div>
+      </div>
+      <span class="brand-tier tier-mid">MID-RANGE</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>美國最主要的哥吉拉可動人形品牌，以7英吋（約18cm）可動系列為主力。NECA的強項在於造型忠實貼近各電影版本，同時保持相對親民的售價。</p>
+        <p>旗下<strong style="color:var(--kaiju-white)">Head-to-Tail系列</strong>是最受推薦的入門進階款，含尾巴全長可達30cm，以接近X-Plus一半的價格提供相當程度的造型還原度。歷代版本涵蓋1954初代、1984平成、1994、Shin Godzilla等多個里程碑形態。</p>
+        <p>NECA在台灣透過正規進口商引進，也可在美國Amazon等平台直購，是希望同時擁有可動關節與大尺寸的收藏家的熱門選擇。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">可動人形</span><span class="tag">7英吋系列</span><span class="tag">Head-to-Tail</span><span class="tag">高CP值</span><span class="tag">美國品牌</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">成立</span><span class="spec-val">1996年</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">美國</span></div>
+        <div class="spec-row"><span class="spec-key">主力系列</span><span class="spec-val">7" Head-to-Tail</span></div>
+        <div class="spec-row"><span class="spec-key">主要尺寸</span><span class="spec-val">18–30cm（含尾）</span></div>
+        <div class="spec-row"><span class="spec-key">平均價位</span><span class="spec-val">NT$ 800–2,500</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">玩具店／Amazon</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">04</div>
+      <div>
+        <div class="brand-name-lg">HIYA TOYS</div>
+        <div class="brand-origin-lg">HONG KONG ／ 2015–</div>
+      </div>
+      <span class="brand-tier tier-mid">MID-RANGE</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>近年最受矚目的新興品牌之一。香港品牌Hiya Toys以<strong style="color:var(--kaiju-white)">Exquisite Basic系列</strong>切入市場，在相對低廉的售價區間內提供令人驚豔的細節品質，被玩家普遍認為是「物超所值」的代表。</p>
+        <p>主力產品約14cm（5.5英吋），雖然尺寸小於NECA，但關節數量多、附件豐富（包含效果配件、替換頭、底座等），搭配精緻的表面塗裝，展現出遠超其售價應有的水準。</p>
+        <p>Hiya Toys的Godzilla vs Kong系列廣受好評，讓許多原本持觀望態度的玩家成為忠實收藏者，被視為2020年代最具競爭力的中價位品牌。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">Exquisite Basic</span><span class="tag">多關節可動</span><span class="tag">附件豐富</span><span class="tag">5.5英吋</span><span class="tag">高CP值</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">成立</span><span class="spec-val">2015年</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">香港</span></div>
+        <div class="spec-row"><span class="spec-key">主力系列</span><span class="spec-val">Exquisite Basic</span></div>
+        <div class="spec-row"><span class="spec-key">主要尺寸</span><span class="spec-val">約14cm</span></div>
+        <div class="spec-row"><span class="spec-key">平均價位</span><span class="spec-val">NT$ 600–1,600</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">網路電商為主</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">05</div>
+      <div>
+        <div class="brand-name-lg">PRIME 1 STUDIO</div>
+        <div class="brand-origin-lg">JAPAN ／ 2012–</div>
+      </div>
+      <span class="brand-tier tier-ultra">ULTRA PREMIUM</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>終極等級的收藏雕像品牌。Prime 1 Studio以超大型聚酯樹脂（Polystone）雕像聞名，搭配LED燈光效果、精緻手工彩繪，幾乎每件都是限量藝術品而非一般玩具。</p>
+        <p>哥吉拉系列常採用<strong style="color:var(--kaiju-white)">1/35比例</strong>，實際高度往往超過60公分，並配有發光口中原子吐息效果零件。部分豪華版本附帶城市廢墟場景台座，整體展示效果驚人。</p>
+        <p>由於生產成本極高，每件售價通常落在台幣2萬至6萬元以上，且發售量極少，是少數具有收藏增值潛力的玩具雕像。需要充足的展示空間與照明規劃。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">頂級雕像</span><span class="tag">LED特效</span><span class="tag">1/35比例</span><span class="tag">Polystone</span><span class="tag">限量藝術品</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">成立</span><span class="spec-val">2012年</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">日本</span></div>
+        <div class="spec-row"><span class="spec-key">主力比例</span><span class="spec-val">1/35 / 1/48</span></div>
+        <div class="spec-row"><span class="spec-key">尺寸範圍</span><span class="spec-val">50–90cm</span></div>
+        <div class="spec-row"><span class="spec-key">價位</span><span class="spec-val">NT$ 20,000–60,000+</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">官網預購／代理商</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-detail">
+    <div class="brand-header">
+      <div class="brand-num-lg">06</div>
+      <div>
+        <div class="brand-name-lg">BULLMARK / MARUSAN</div>
+        <div class="brand-origin-lg">JAPAN ／ 1960s–1970s ／ 已停產</div>
+      </div>
+      <span class="brand-tier tier-vintage">VINTAGE COLLECTIBLE</span>
+    </div>
+    <div class="brand-body">
+      <div class="brand-body-text">
+        <p>日本軟膠怪獸（Sofubi）文化的真正起源。丸三商店與後繼的Bullmark在1960–70年代生產的哥吉拉軟膠，是所有今日怪獸玩具收藏文化的祖先，也是最具歷史意義的哥吉拉玩具。</p>
+        <p>這個年代的產品以手工注入色彩的方式生產，品質參差不齊，卻因此形成了每件都略有差異的獨特性。昭和年代特有的誇張造型與鮮豔配色，是當代藝術家仿製「藝術軟膠（Art Sofubi）」的重要靈感來源。</p>
+        <p>現存品為古董收藏，通常僅能在日本古物拍賣、專業怪獸玩具古董商或大型玩具展場中找到。購入前務必確認品相與來源，仿製品亦存在市場中。</p>
+        <div class="brand-tags-lg">
+          <span class="tag">昭和Vintage</span><span class="tag">古董收藏</span><span class="tag">Sofubi始祖</span><span class="tag">文化遺產</span><span class="tag">已停產</span>
+        </div>
+      </div>
+      <div class="brand-specs">
+        <div class="spec-row"><span class="spec-key">年代</span><span class="spec-val">1960s–1970s</span></div>
+        <div class="spec-row"><span class="spec-key">國家</span><span class="spec-val">日本（已停產）</span></div>
+        <div class="spec-row"><span class="spec-key">材質</span><span class="spec-val">昭和軟膠 Sofubi</span></div>
+        <div class="spec-row"><span class="spec-key">尺寸</span><span class="spec-val">15–28cm 為主</span></div>
+        <div class="spec-row"><span class="spec-key">現今市值</span><span class="spec-val">NT$ 10,000–500,000+</span></div>
+        <div class="spec-row"><span class="spec-key">購買管道</span><span class="spec-val">日本古物拍賣</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+</body>
+</html>

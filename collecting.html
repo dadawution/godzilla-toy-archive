@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>收藏技巧 — GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .tip-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border: 1px solid var(--kaiju-gray);
+    background: var(--kaiju-charcoal);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .tip-card:hover { border-color: var(--kaiju-red); }
+  .tip-card-num {
+    background: var(--kaiju-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--kaiju-red);
+    border-right: 1px solid var(--kaiju-gray);
+    flex-shrink: 0;
+  }
+  .tip-card-body { padding: 1.75rem 2rem; }
+  .tip-card-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    color: var(--kaiju-white);
+    margin-bottom: 0.3rem;
+  }
+  .tip-card-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--kaiju-red);
+    margin-bottom: 0.9rem;
+  }
+  .tip-card-text { font-size: 0.9rem; line-height: 1.8; color: var(--kaiju-light); }
+  .tip-card-text strong { color: var(--kaiju-pale); font-weight: 700; }
+
+  .checklist {
+    background: var(--kaiju-charcoal);
+    border: 1px solid var(--kaiju-gray);
+    padding: 2.5rem;
+    margin-top: 3rem;
+  }
+  .checklist-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: var(--kaiju-white);
+    margin-bottom: 1.5rem;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-box {
+    width: 18px; height: 18px;
+    border: 1px solid var(--kaiju-mid);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .check-item.checked .check-box {
+    background: var(--kaiju-red);
+    border-color: var(--kaiju-red);
+  }
+  .check-item.checked .check-box::after {
+    content: '✓';
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .check-item.checked .check-label { color: var(--kaiju-mid); text-decoration: line-through; }
+  .check-label { font-size: 0.88rem; color: var(--kaiju-light); line-height: 1.5; }
+
+  .resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 3rem; }
+  .resource-card {
+    background: var(--kaiju-charcoal);
+    border: 1px solid var(--kaiju-gray);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .resource-card:hover { border-color: var(--kaiju-gold); }
+  .resource-type { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--kaiju-red); margin-bottom: 0.5rem; }
+  .resource-name { font-family: var(--font-title); font-size: 1.2rem; color: var(--kaiju-white); margin-bottom: 0.4rem; }
+  .resource-desc { font-size: 0.82rem; line-height: 1.65; color: var(--kaiju-light); }
+
+  @media (max-width: 600px) {
+    .tip-card { grid-template-columns: 60px 1fr; }
+    .tip-card-num { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link" href="brands.html">品牌介紹</a>
+    <a class="nav-link" href="figures.html">經典系列</a>
+    <a class="nav-link" href="scale.html">比例指南</a>
+    <a class="nav-link active" href="collecting.html">收藏技巧</a>
+    <a class="nav-link" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label fade-up">// 05 — COLLECTING TIPS</p>
+  <h1 class="page-title fade-up-2">收藏入門<br>與進階技巧</h1>
+  <p class="page-desc fade-up-3">無論你是剛接觸哥吉拉玩具的新手，還是已有數年資歷的進階收藏家，以下建議都能幫助你建立更清晰的收藏策略，避免常見的地雷。</p>
+</div>
+
+<div class="main-content">
+
+  <div class="tip-card">
+    <div class="tip-card-num">01</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">確定自己的收藏主題</div>
+      <div class="tip-card-sub">DEFINE YOUR FOCUS</div>
+      <p class="tip-card-text">哥吉拉玩具種類繁多，新手很容易「什麼都想買」，導致預算迅速耗盡卻沒有一個完整的收藏主軸。建議先選定主題——例如<strong>「只收昭和系列軟膠」</strong>、<strong>「專攻S.H.MonsterArts可動人形」</strong>、或<strong>「每個年代各買一款代表作」</strong>——有了明確方向，才能在取捨間做出不後悔的決定。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">02</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">保留原盒是保值關鍵</div>
+      <div class="tip-card-sub">KEEP THE BOX — MISB MATTERS</div>
+      <p class="tip-card-text"><strong>MISB（Mint In Sealed Box，全新未開封帶原廠封膜）</strong>是二手市場最高品相的描述，通常能以最高溢價成交。即使你打算開封展示，保存好原始外盒與所有配件也能大幅提升日後轉售價格。外盒有破損或遺失的玩具，二手價格往往下滑30–60%。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">03</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">了解軟膠的正確保存方式</div>
+      <div class="tip-card-sub">SOFUBI PRESERVATION</div>
+      <p class="tip-card-text">軟膠（PVC/Sofubi）長期暴露於以下環境下會劣化：<strong>高溫</strong>（超過35°C會使PVC變形）、<strong>紫外線</strong>（褪色、材質脆化）、<strong>高濕度</strong>（發霉或表面黏膩）。建議使用<strong>防紫外線展示櫃</strong>，並在展示空間維持穩定室溫與濕度。昭和時代的老軟膠更需特別注意，千萬不可受熱或受壓。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">04</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">選擇可信的購買管道</div>
+      <div class="tip-card-sub">BUY FROM TRUSTED SOURCES</div>
+      <p class="tip-card-text">推薦購買管道（由安全性高到低排列）：<strong>品牌官方網站</strong>（最安全）→ <strong>AmiAmi、HobbySearch、Hobby Link Japan等日本大型玩具電商</strong>（信譽良好，有繁體中文介面或支援國際寄送）→ <strong>日本Yahoo拍賣透過代拍服務（如FROM JAPAN、Zenmarket）</strong>→ 各地收藏社團二手交流。購買古董軟膠時請特別謹慎，仿製品普遍存在市場中。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">05</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">加入社群，掌握第一手資訊</div>
+      <div class="tip-card-sub">JOIN THE COMMUNITY</div>
+      <p class="tip-card-text">哥吉拉玩具的新品資訊、限定品情報與二手交易往往在社群中最快流通。推薦加入：<strong>Facebook「哥吉拉玩具收藏交流」社團</strong>（台灣玩家聚集）、<strong>Reddit r/Godzilla 與 r/MonsterArts</strong>（英語國際社群，評測豐富）、以及追蹤 <strong>Twitter/X 上的 #GodzillaCollection、#SHMonsterArts</strong> 等標籤。加入社群也能在轉讓時找到可靠買家。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">06</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">限定品一定要預購，不要等二手</div>
+      <div class="tip-card-sub">PRE-ORDER LIMITED ITEMS EARLY</div>
+      <p class="tip-card-text">S.H.MonsterArts魂WEB限定版、X-Plus 限量系列等，錯過預購期後二手市場溢價往往達到<strong>50–200%以上</strong>。建議訂閱品牌電子報、追蹤玩具新聞網站（如Toyark、Fwoosh）與社群通知。即使當下資金不寬裕，也可以考慮先預購再決定是否轉讓，通常比二手購入划算許多。</p>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-card-num">07</div>
+    <div class="tip-card-body">
+      <div class="tip-card-title">展示規劃與燈光是加分關鍵</div>
+      <div class="tip-card-sub">DISPLAY & LIGHTING</div>
+      <p class="tip-card-text">好的展示環境能讓玩具的質感倍增。建議使用<strong>DETOLF（IKEA高腳玻璃展示櫃）</strong>或Monadnock等專業展示系統，並加裝<strong>LED燈條</strong>（色溫建議4000K–5000K自然白光）照射玩具，能顯著提升視覺效果。展示台座（Display Base）也是許多進階玩家不可缺少的配件，X-Plus與Prime 1 Studio的玩具尤其需要穩定底座支撐。</p>
+    </div>
+  </div>
+
+  <!-- Collector's Checklist -->
+  <div class="checklist">
+    <div class="checklist-title">新手收藏查核清單</div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">確定收藏主題與預算上限</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">訂閱 AmiAmi、HobbySearch 等電商預購通知</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">加入至少一個台灣或國際哥吉拉收藏社群</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">購入第一款玩具（推薦：Bandai Movie Monster 系列）</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">規劃展示空間，避免陽光直射</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">保留所有原盒與配件（未開封或妥善存放）</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">了解至少一個代拍服務以購買日本限定品</div>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <div class="check-label">設定每月玩具預算，避免衝動消費</div>
+    </div>
+  </div>
+
+  <!-- Resources -->
+  <div style="margin-top:3rem;">
+    <p class="section-label">推薦資源</p>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-type">電商平台</div>
+        <div class="resource-name">AmiAmi</div>
+        <div class="resource-desc">日本最大玩具電商之一，預購商品豐富，支援國際寄送，是最推薦的購買管道。</div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-type">電商平台</div>
+        <div class="resource-name">HobbySearch</div>
+        <div class="resource-desc">品項完整，界面友好，部分商品提供集運，適合購買多件同時寄出節省運費。</div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-type">代拍服務</div>
+        <div class="resource-name">FROM JAPAN</div>
+        <div class="resource-desc">日本Yahoo拍賣代拍首選，介面有繁體中文版，適合搜尋二手與限定品。</div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-type">社群論壇</div>
+        <div class="resource-name">Reddit r/MonsterArts</div>
+        <div class="resource-desc">S.H.MonsterArts 國際社群，評測、開箱、二手交易資訊豐富，英語為主。</div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-type">玩具新聞</div>
+        <div class="resource-name">Toyark / Fwoosh</div>
+        <div class="resource-desc">玩具業界新聞與開箱評測網站，新品公開資訊最快，適合追蹤預購時程。</div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-type">YouTube</div>
+        <div class="resource-name">各大開箱頻道</div>
+        <div class="resource-desc">搜尋品牌名稱加 "review" 即可找到大量開箱影片，購買前參考評測是最好習慣。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+</body>
+</html>

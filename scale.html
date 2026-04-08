@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>比例指南 — GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .scale-hero-bar {
+    background: var(--kaiju-charcoal);
+    border: 1px solid var(--kaiju-gray);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    overflow-x: auto;
+  }
+  .bar-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .bar-fill {
+    background: linear-gradient(180deg, var(--kaiju-red) 0%, rgba(192,57,43,0.3) 100%);
+    width: 40px;
+    border-top: 2px solid var(--kaiju-red);
+  }
+  .bar-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; color: var(--kaiju-gold); text-align: center; }
+  .bar-cm { font-family: var(--font-title); font-size: 1rem; color: var(--kaiju-white); text-align: center; }
+
+  .scale-blocks { display: grid; gap: 1.5rem; }
+  .scale-block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    border: 1px solid var(--kaiju-gray);
+    background: var(--kaiju-charcoal);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .scale-block:hover { border-color: var(--kaiju-red); }
+  .scale-block-ratio {
+    background: var(--kaiju-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .ratio-num { font-family: var(--font-title); font-size: 2.8rem; line-height: 1; color: var(--kaiju-white); }
+  .ratio-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.2em; color: var(--kaiju-gold); margin-top: 0.4rem; }
+  .scale-block-body { padding: 2rem; }
+  .scale-block-title { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 0.05em; color: var(--kaiju-white); margin-bottom: 0.5rem; }
+  .scale-block-text { font-size: 0.88rem; line-height: 1.75; color: var(--kaiju-light); margin-bottom: 1rem; }
+  .scale-examples { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .scale-example-tag {
+    font-family: var(--font-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.1em;
+    color: var(--kaiju-atomic);
+    border: 1px solid rgba(74,240,160,0.3);
+    padding: 0.2rem 0.5rem;
+  }
+  @media (max-width: 600px) {
+    .scale-block { grid-template-columns: 1fr; }
+    .scale-block-ratio { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link" href="brands.html">品牌介紹</a>
+    <a class="nav-link" href="figures.html">經典系列</a>
+    <a class="nav-link active" href="scale.html">比例指南</a>
+    <a class="nav-link" href="collecting.html">收藏技巧</a>
+    <a class="nav-link" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label fade-up">// 04 — SCALE GUIDE</p>
+  <h1 class="page-title fade-up-2">比例尺寸指南</h1>
+  <p class="page-desc fade-up-3">比例（Scale）決定玩具的實際大小與展示需求。哥吉拉真實全長依電影版本不同，約介於50至122公尺之間。以下為收藏市場常見的各種比例解說，以及對應品牌與實際玩具尺寸。</p>
+</div>
+
+<div class="main-content">
+
+  <!-- Visual bar chart -->
+  <div class="scale-hero-bar">
+    <div class="bar-item">
+      <div class="bar-fill" style="height:20px"></div>
+      <div class="bar-cm">10cm</div>
+      <div class="bar-label">1/500</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:35px"></div>
+      <div class="bar-cm">15cm</div>
+      <div class="bar-label">1/400</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:55px"></div>
+      <div class="bar-cm">18cm</div>
+      <div class="bar-label">Non-Scale</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:75px"></div>
+      <div class="bar-cm">25cm</div>
+      <div class="bar-label">1/250</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:100px"></div>
+      <div class="bar-cm">30cm</div>
+      <div class="bar-label">1/144</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:140px"></div>
+      <div class="bar-cm">50cm</div>
+      <div class="bar-label">1/100</div>
+    </div>
+    <div class="bar-item">
+      <div class="bar-fill" style="height:200px"></div>
+      <div class="bar-cm">68cm+</div>
+      <div class="bar-label">1/35</div>
+    </div>
+  </div>
+
+  <div class="scale-blocks">
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">Non</div>
+        <div class="ratio-label">NON-SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">無固定比例（展示優先）</div>
+        <p class="scale-block-text">多數大眾入門軟膠與可動人形採用此方式，不嚴格對應真實比例，以最佳展示比例為設計基準。通常高度落在14–20cm左右，陳列效果與實際可玩性兼顧，是市場銷量最大的玩具規格。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">Bandai Movie Monster Series</span>
+          <span class="scale-example-tag">Hiya Exquisite Basic</span>
+          <span class="scale-example-tag">NECA 7" 系列</span>
+          <span class="scale-example-tag">S.H.MonsterArts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">1/500</div>
+        <div class="ratio-label">MICRO SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">微型比例（約10–13cm）</div>
+        <p class="scale-block-text">最小的比例，玩具實際高度約10–13公分。體積小巧，適合多隻並排在有限空間展示，或搭配迷你城市模型打造場景（Diorama）。多見於早期Bandai系列或部分模型套件。細節相對簡化，價格通常親民。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">Bandai 舊系列</span>
+          <span class="scale-example-tag">模型套件</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">1/250</div>
+        <div class="ratio-label">MID SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">中型比例（約20–28cm）</div>
+        <p class="scale-block-text">兼顧細節與空間需求的「甜蜜點」。玩具高度約20–28公分，可以清楚呈現表面紋理與造型細節，同時不佔太多展示空間。Bandai部分精品系列與X-Plus的25cm系列皆落在此範圍，是進階收藏的常見選擇。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">X-Plus 25cm Series</span>
+          <span class="scale-example-tag">Bandai 精品系列</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">1/144</div>
+        <div class="ratio-label">LARGE SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">大型比例（約30–40cm）</div>
+        <p class="scale-block-text">X-Plus的核心規格，也是高端收藏市場的主流比例。玩具實際高度約30–40公分，可以完整呈現皮膚紋理、牙齒細節、背脊光芒等精細元素。展示時具有相當震撼力，需要約40–50cm的縱深展示空間。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">X-Plus 30cm Series</span>
+          <span class="scale-example-tag">NECA Head-to-Tail（含尾）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">1/100</div>
+        <div class="ratio-label">GIANT SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">超大比例（約50–60cm）</div>
+        <p class="scale-block-text">X-Plus Gigantic Series與部分高端品牌採用此比例，玩具高度約50–60公分。在展示空間中具有壓倒性的視覺存在感，往往成為展示台或書房的絕對主角。通常極為限量，購入後需要妥善的展示台座與防塵保護措施。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">X-Plus Gigantic Series</span>
+          <span class="scale-example-tag">部分限量高端品</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-block-ratio">
+        <div class="ratio-num">1/35</div>
+        <div class="ratio-label">ULTRA SCALE</div>
+      </div>
+      <div class="scale-block-body">
+        <div class="scale-block-title">極致比例（60cm 以上）</div>
+        <p class="scale-block-text">Prime 1 Studio等頂級雕像品牌的領域。以哥吉拉122公尺的電影設定換算，1/35比例的玩具實際高度約達3.5公尺——當然實際成品為藝術比例縮減後的設計，通常在60–90cm之間。需要獨立展示台、專業燈光規劃與充足空間，是終極收藏者的夢想等級。</p>
+        <div class="scale-examples">
+          <span class="scale-example-tag">Prime 1 Studio</span>
+          <span class="scale-example-tag">Sideshow Collectibles</span>
+          <span class="scale-example-tag">Iron Studios</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:var(--kaiju-mid); line-height:1.9;">
+    ※ 各比例對應的實際尺寸會因設計者採用哪個版本的哥吉拉「真實身高」而有所差異。<br>
+    ※ Non-Scale 產品的高度僅供參考，實際尺寸以各品牌官方規格為準。<br>
+    ※ 展示空間建議預留玩具高度的1.5–2倍作為縱深，以確保最佳視覺效果。
+  </p>
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥吉拉玩具圖鑑 GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(ellipse at 50% 60%, #1a0a0a 0%, #0a0a0a 70%);
+    overflow: hidden;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px);
+    pointer-events: none;
+  }
+  .hero-scales { position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0.06; }
+  .hero-scales svg { width: 100%; height: 100%; }
+  .hero-eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.4em; color: var(--kaiju-red); margin-bottom: 1.5rem; animation: fadeUp 1s ease both; }
+  .hero-title { font-family: var(--font-title); font-size: clamp(5rem, 15vw, 13rem); line-height: 0.85; letter-spacing: 0.02em; color: var(--kaiju-white); animation: fadeUp 1s 0.1s ease both; }
+  .hero-title span.red { color: var(--kaiju-red); }
+  .hero-subtitle { font-family: var(--font-title); font-size: clamp(1.5rem, 4vw, 3rem); letter-spacing: 0.18em; color: var(--kaiju-gold); margin-top: 0.5rem; animation: fadeUp 1s 0.2s ease both; }
+  .hero-desc { max-width: 540px; font-size: 0.95rem; line-height: 1.8; color: var(--kaiju-light); margin-top: 2rem; animation: fadeUp 1s 0.3s ease both; }
+  .hero-badge { display: inline-block; margin-top: 2.5rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.25em; color: var(--kaiju-atomic); border: 1px solid var(--kaiju-atomic); padding: 0.4rem 1.2rem; animation: fadeUp 1s 0.4s ease both, pulse 3s 2s ease infinite; }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.3em; color: var(--kaiju-mid); animation: bounce 2s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+  .index-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--kaiju-gray); border: 1px solid var(--kaiju-gray); margin-top: 0; }
+  .index-card { background: var(--kaiju-dark); padding: 2.5rem 2rem; text-decoration: none; display: block; transition: background 0.25s; position: relative; overflow: hidden; }
+  .index-card:hover { background: var(--kaiju-charcoal); }
+  .index-card::after { content: '→'; position: absolute; bottom: 1.5rem; right: 1.5rem; font-family: var(--font-mono); font-size: 1rem; color: var(--kaiju-red); opacity: 0; transform: translateX(-6px); transition: opacity 0.2s, transform 0.2s; }
+  .index-card:hover::after { opacity: 1; transform: translateX(0); }
+  .index-num { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.3em; color: var(--kaiju-red); margin-bottom: 0.8rem; }
+  .index-title { font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 0.05em; color: var(--kaiju-white); margin-bottom: 0.5rem; line-height: 1.1; }
+  .index-sub { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.2em; color: var(--kaiju-gold); margin-bottom: 0.9rem; }
+  .index-desc { font-size: 0.85rem; line-height: 1.7; color: var(--kaiju-light); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-scales">
+    <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="hex" x="0" y="0" width="40" height="46" patternUnits="userSpaceOnUse">
+        <polygon points="20,0 40,11.5 40,34.5 20,46 0,34.5 0,11.5" fill="none" stroke="white" stroke-width="0.5"/>
+      </pattern></defs>
+      <rect width="800" height="800" fill="url(#hex)"/>
+    </svg>
+  </div>
+  <p class="hero-eyebrow">＊ 終極收藏指南 ＊ ULTIMATE COLLECTOR'S GUIDE ＊</p>
+  <h1 class="hero-title"><span class="red">哥</span>吉<span class="red">拉</span></h1>
+  <p class="hero-subtitle">GODZILLA TOY ARCHIVE</p>
+  <p class="hero-desc">從1954年的核怪獸傳說，到今日精緻的收藏品——探索橫跨七十年的哥吉拉玩具世界，品牌、比例、稀有度、收藏知識一站掌握。</p>
+  <span class="hero-badge">▼ SCROLL TO EXPLORE ▼</span>
+  <div class="scroll-hint">↓ &nbsp; SCROLL &nbsp; ↓</div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link active" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link" href="brands.html">品牌介紹</a>
+    <a class="nav-link" href="figures.html">經典系列</a>
+    <a class="nav-link" href="scale.html">比例指南</a>
+    <a class="nav-link" href="collecting.html">收藏技巧</a>
+    <a class="nav-link" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="index-grid">
+  <a class="index-card" href="history.html">
+    <div class="index-num">// 01</div>
+    <div class="index-title">玩具歷史<br>年表</div>
+    <div class="index-sub">HISTORY TIMELINE</div>
+    <p class="index-desc">從1954年橡皮軟膠原點，到萬代、X-Plus的現代精品，走過七十年收藏文化演變。</p>
+  </a>
+  <a class="index-card" href="brands.html">
+    <div class="index-num">// 02</div>
+    <div class="index-title">主要品牌<br>介紹</div>
+    <div class="index-sub">BRAND DIRECTORY</div>
+    <p class="index-desc">Bandai、X-Plus、NECA、Hiya Toys等六大授權品牌深度解析，找到最適合你的選擇。</p>
+  </a>
+  <a class="index-card" href="figures.html">
+    <div class="index-num">// 03</div>
+    <div class="index-title">經典系列<br>一覽</div>
+    <div class="index-sub">FIGURE CATALOG</div>
+    <p class="index-desc">各年代代表性收藏品規格對照，含尺寸、材質、稀有度評等，快速掌握市場全貌。</p>
+  </a>
+  <a class="index-card" href="scale.html">
+    <div class="index-num">// 04</div>
+    <div class="index-title">比例尺寸<br>指南</div>
+    <div class="index-sub">SCALE GUIDE</div>
+    <p class="index-desc">1/500迷你到1/35超大型雕像，了解各比例對應真實大小與展示需求。</p>
+  </a>
+  <a class="index-card" href="collecting.html">
+    <div class="index-num">// 05</div>
+    <div class="index-title">收藏入門<br>技巧</div>
+    <div class="index-sub">COLLECTING TIPS</div>
+    <p class="index-desc">從方向確立、保存方式到限定品搶購策略，六條實用建議幫你避開新手地雷。</p>
+  </a>
+  <a class="index-card" href="glossary.html">
+    <div class="index-num">// 06</div>
+    <div class="index-title">名詞<br>解說</div>
+    <div class="index-sub">GLOSSARY</div>
+    <p class="index-desc">Sofubi、MISB、魂WEB限定、Kaiju等十個核心術語，收藏界必懂行話一次看懂。</p>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+</body>
+</html>

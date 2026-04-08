@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>經典系列 — GODZILLA TOY ARCHIVE</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--kaiju-light);
+    background: none;
+    border: 1px solid var(--kaiju-gray);
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    color: var(--kaiju-white);
+    border-color: var(--kaiju-red);
+    background: rgba(192,57,43,0.08);
+  }
+  .table-wrap { overflow-x: auto; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">GODZILLA.TW</a>
+    <a class="nav-link" href="index.html">首頁</a>
+    <a class="nav-link" href="history.html">歷史年表</a>
+    <a class="nav-link" href="brands.html">品牌介紹</a>
+    <a class="nav-link active" href="figures.html">經典系列</a>
+    <a class="nav-link" href="scale.html">比例指南</a>
+    <a class="nav-link" href="collecting.html">收藏技巧</a>
+    <a class="nav-link" href="glossary.html">名詞解說</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label fade-up">// 03 — FIGURE CATALOG</p>
+  <h1 class="page-title fade-up-2">經典系列一覽</h1>
+  <p class="page-desc fade-up-3">各年代代表性收藏品規格對照，含品牌、尺寸、材質與稀有度評等。透過下方篩選按鈕，快速找到你感興趣的類別。</p>
+</div>
+
+<div class="main-content">
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterTable('all', this)">全部顯示</button>
+    <button class="filter-btn" onclick="filterTable('bandai', this)">Bandai</button>
+    <button class="filter-btn" onclick="filterTable('xplus', this)">X-Plus</button>
+    <button class="filter-btn" onclick="filterTable('neca', this)">NECA</button>
+    <button class="filter-btn" onclick="filterTable('hiya', this)">Hiya Toys</button>
+    <button class="filter-btn" onclick="filterTable('prime1', this)">Prime 1</button>
+    <button class="filter-btn" onclick="filterTable('vintage', this)">Vintage</button>
+    <button class="filter-btn" onclick="filterTable('ltd', this)">LIMITED</button>
+    <button class="filter-btn" onclick="filterTable('rare', this)">RARE</button>
+  </div>
+
+  <div class="table-wrap">
+    <table class="spec-table" id="figureTable">
+      <thead>
+        <tr>
+          <th>系列名稱</th>
+          <th>品牌</th>
+          <th>年份</th>
+          <th>尺寸</th>
+          <th>材質</th>
+          <th>稀有度</th>
+          <th>參考售價（NTD）</th>
+          <th>特色說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-brand="bandai" data-rarity="ltd">
+          <td class="name">S.H.MonsterArts Godzilla 1954</td>
+          <td class="series">Bandai Tamashii</td>
+          <td>2013</td>
+          <td>16cm</td>
+          <td>PVC + ABS</td>
+          <td><span class="spec-badge badge-ltd">LIMITED</span></td>
+          <td>約 $3,500–6,000</td>
+          <td>初代造型精密還原，多關節可動，已絕版</td>
+        </tr>
+        <tr data-brand="bandai" data-rarity="common">
+          <td class="name">Movie Monster Godzilla 2023</td>
+          <td class="series">Bandai</td>
+          <td>2023</td>
+          <td>18cm</td>
+          <td>軟膠 PVC</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $200–350</td>
+          <td>入門首選，多款造型，各大玩具店現貨</td>
+        </tr>
+        <tr data-brand="bandai" data-rarity="ltd">
+          <td class="name">S.H.MonsterArts Shin Godzilla</td>
+          <td class="series">Bandai Tamashii</td>
+          <td>2016</td>
+          <td>18cm</td>
+          <td>PVC + ABS</td>
+          <td><span class="spec-badge badge-ltd">LIMITED</span></td>
+          <td>約 $3,000–5,500</td>
+          <td>第四形態+第二形態，附發光效果零件</td>
+        </tr>
+        <tr data-brand="bandai" data-rarity="common">
+          <td class="name">S.H.MonsterArts Godzilla 2019</td>
+          <td class="series">Bandai Tamashii</td>
+          <td>2020</td>
+          <td>16cm</td>
+          <td>PVC + ABS</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $2,800–4,500</td>
+          <td>MonsterVerse版本，附Atomic Breath效果件</td>
+        </tr>
+        <tr data-brand="xplus" data-rarity="rare">
+          <td class="name">X-Plus 30cm Shin Godzilla 4th Form</td>
+          <td class="series">X-Plus</td>
+          <td>2017</td>
+          <td>30cm</td>
+          <td>高品質軟膠</td>
+          <td><span class="spec-badge badge-rare">RARE</span></td>
+          <td>約 $8,000–14,000</td>
+          <td>第四形態細節驚人，已停產，稀有度高</td>
+        </tr>
+        <tr data-brand="xplus" data-rarity="rare">
+          <td class="name">X-Plus Gigantic Godzilla 1954</td>
+          <td class="series">X-Plus</td>
+          <td>2014</td>
+          <td>50cm</td>
+          <td>高品質軟膠</td>
+          <td><span class="spec-badge badge-rare">RARE</span></td>
+          <td>約 $15,000–25,000</td>
+          <td>初代巨大版，限量生產，高端展示指標</td>
+        </tr>
+        <tr data-brand="xplus" data-rarity="common">
+          <td class="name">X-Plus 25cm Godzilla 1984</td>
+          <td class="series">X-Plus</td>
+          <td>2019</td>
+          <td>25cm</td>
+          <td>高品質軟膠</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $6,500–9,500</td>
+          <td>平成初代造型，塗裝精細，X-Plus入門推薦</td>
+        </tr>
+        <tr data-brand="neca" data-rarity="common">
+          <td class="name">NECA Head-to-Tail Godzilla 1954</td>
+          <td class="series">NECA</td>
+          <td>2019</td>
+          <td>30cm（含尾）</td>
+          <td>PVC</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $800–1,500</td>
+          <td>含尾長30cm，CP值極高，入門進階首選</td>
+        </tr>
+        <tr data-brand="neca" data-rarity="common">
+          <td class="name">NECA Godzilla 2014 (MonsterVerse)</td>
+          <td class="series">NECA</td>
+          <td>2021</td>
+          <td>18cm</td>
+          <td>PVC</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $900–1,800</td>
+          <td>傳奇哥吉拉版本，關節可動，造型忠實</td>
+        </tr>
+        <tr data-brand="neca" data-rarity="ltd">
+          <td class="name">NECA Godzilla vs Kong 2-Pack</td>
+          <td class="series">NECA</td>
+          <td>2021</td>
+          <td>各18cm</td>
+          <td>PVC</td>
+          <td><span class="spec-badge badge-ltd">LIMITED</span></td>
+          <td>約 $1,800–3,500</td>
+          <td>電影對戰組合，Target限定，已停產</td>
+        </tr>
+        <tr data-brand="hiya" data-rarity="common">
+          <td class="name">Hiya Exquisite Basic Godzilla 2019</td>
+          <td class="series">Hiya Toys</td>
+          <td>2021</td>
+          <td>14cm</td>
+          <td>PVC + ABS</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $600–900</td>
+          <td>多關節可動，附底座，高CP值代表作</td>
+        </tr>
+        <tr data-brand="hiya" data-rarity="common">
+          <td class="name">Hiya Exquisite Basic Kong (GvK)</td>
+          <td class="series">Hiya Toys</td>
+          <td>2021</td>
+          <td>14cm</td>
+          <td>PVC + ABS</td>
+          <td><span class="spec-badge badge-common">COMMON</span></td>
+          <td>約 $600–900</td>
+          <td>附斧頭武器配件，與哥吉拉版可對戰陳列</td>
+        </tr>
+        <tr data-brand="prime1" data-rarity="ltd">
+          <td class="name">Prime 1 Godzilla 2019 (1/35)</td>
+          <td class="series">Prime 1 Studio</td>
+          <td>2022</td>
+          <td>約68cm</td>
+          <td>Polystone樹脂</td>
+          <td><span class="spec-badge badge-ltd">LIMITED</span></td>
+          <td>約 $35,000–55,000</td>
+          <td>LED口中光效，城市場景底座，終極展示品</td>
+        </tr>
+        <tr data-brand="prime1" data-rarity="ltd">
+          <td class="name">Prime 1 Shin Godzilla (1/35)</td>
+          <td class="series">Prime 1 Studio</td>
+          <td>2021</td>
+          <td>約75cm</td>
+          <td>Polystone樹脂</td>
+          <td><span class="spec-badge badge-ltd">LIMITED</span></td>
+          <td>約 $40,000–65,000</td>
+          <td>最具衝擊力的Shin設計，LED雙眼效果</td>
+        </tr>
+        <tr data-brand="vintage" data-rarity="rare">
+          <td class="name">Marusan 初代哥吉拉</td>
+          <td class="series">Marusan（已停產）</td>
+          <td>1960s</td>
+          <td>約25cm</td>
+          <td>昭和軟膠</td>
+          <td><span class="spec-badge badge-vintage">VINTAGE</span></td>
+          <td>$50,000–500,000+</td>
+          <td>日本軟膠文化原點，古董收藏聖杯</td>
+        </tr>
+        <tr data-brand="vintage" data-rarity="rare">
+          <td class="name">Bullmark 彩繪版哥吉拉</td>
+          <td class="series">Bullmark（已停產）</td>
+          <td>1972</td>
+          <td>約20cm</td>
+          <td>昭和軟膠</td>
+          <td><span class="spec-badge badge-vintage">VINTAGE</span></td>
+          <td>$30,000–300,000</td>
+          <td>昭和彩繪限定版，顏色版本多，極具收藏價值</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:var(--kaiju-mid); line-height:1.8;">
+    ※ 價格為市場參考區間，實際售價依品相、版本與市場供需而異。古董品（Vintage）價格變動幅度極大，建議向專業商家諮詢。<br>
+    ※ LIMITED = 停產或限量品；RARE = 現貨稀少；COMMON = 仍可購得；VINTAGE = 昭和時代古董。
+  </p>
+</div>
+
+<footer>
+  <div class="footer-title">GODZILLA TOY ARCHIVE</div>
+  <p class="footer-text">※ 本站內容僅供收藏參考，所有哥吉拉相關版權均屬東宝株式會社（Toho Co., Ltd.）所有 ※</p>
+  <p class="footer-text" style="margin-top:0.4rem;">© 2025 &nbsp;|&nbsp; DESIGNED FOR KAIJU COLLECTORS &nbsp;|&nbsp; TAIWAN</p>
+</footer>
+
+<script>
+function filterTable(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#figureTable tbody tr').forEach(row => {
+    if (filter === 'all') { row.classList.remove('hidden'); return; }
+    const brand = row.dataset.brand;
+    const rarity = row.dataset.rarity;
+    const match = (filter === 'ltd' && rarity === 'ltd') ||
+                  (filter === 'rare' && (rarity === 'rare' || rarity === 'vintage')) ||
+                  (filter === 'vintage' && brand === 'vintage') ||
+                  brand === filter;
+    row.classList.toggle('hidden', !match);
+  });
+}
+</script>
+</body>
+</html>
